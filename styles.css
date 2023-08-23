@@ -1,0 +1,176 @@
+html {
+    background: rgb(0, 0, 0);
+}
+
+.textflex1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top: 1.5px solid white;
+    border-bottom: 1.5px solid white;
+    margin: 2.5em 12.5% 0em 12.5%;
+    height: 4.5em;
+}
+
+
+.typing-txt,
+.typing-txt-2 {
+    display: none;
+}
+
+.text_a ul,
+.text_a-2 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.text_a,
+.text_a-2 {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 0em 0em;
+}
+
+.text_a-2 {
+    display: none;
+}
+
+#title1,
+#title2 {
+    font-size: 1.3em;
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+
+#title2 {
+    color: orange;
+    display: none;
+}
+
+#wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    height: 100%;
+    margin-bottom: 2.5em;
+}
+
+.flexcenter {
+    width: 75%;
+    height: 40vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 2em;
+    margin: 3em 0em 0em 0em;
+}
+
+.flip,
+.selectflip {
+    perspective: 1100px;
+    transform: none;
+}
+
+.card,
+.select {
+    position: relative;
+    transition: .4s;
+    transform-style: preserve-3d;
+    /* 중첩된 요소가 3D 공간에서 어떻게 랜더링 될것인가 */
+}
+
+.card {
+    z-index: 98;
+}
+
+.select {
+    z-index: 99;
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* 뒷면 안 보이게 */
+}
+
+.front {
+    border-radius: 10px;
+}
+
+.back {
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+
+.back p {
+    font-size: 20px;
+    padding: 15px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.frontimg,
+.backimg {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: translateY(-40px);
+}
+
+@media (max-width: 800px) {
+    body {
+        display: block;
+    }
+
+    .flexcenter {
+        width: 100%;
+        grid-template-rows: 100% 100% 100% 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1em;
+        margin: 0.5em;
+    }
+
+    #wrap {
+        height: auto;
+    }
+
+    .front {
+        border-radius: 5px;
+    }
+
+    .back {
+        transform: rotateY(180deg);
+        border-radius: 5px;
+    }
+
+    .frontimg,
+    .backimg {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .textflex1 {
+        margin: 1.5em 0.5em;
+        height: 3em;
+    }
+
+    .text_a,
+    .text_a-2 {
+        font-size: 1.2em;
+    }
+}
